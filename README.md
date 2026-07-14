@@ -1,4 +1,6 @@
-# CloudThrift: Event-Driven Autonomous Infrastructure & FinOps Orchestrator
+# CloudThrift
+
+Event-Driven Azure Infrastructure & FinOps Orchestrator
 
 **Al-Jawharah Mohammed Alsumayri**
 
@@ -1289,8 +1291,6 @@ Real deletion should only be enabled after validating:
 # Contact
 
 **Al-Jawharah Mohammed Alsumayri**
-
-Email: Aljawharah.Alsumayri@outlook.sa
 
 GitHub:  
 https://github.com/aljawharah-m
