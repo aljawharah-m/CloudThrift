@@ -1,0 +1,104 @@
+bin/
+**/bin/
+!Modules/**
+obj
+csx
+.vs
+edge
+Publish
+
+*.user
+*.suo
+*.cscfg
+*.Cache
+project.lock.json
+
+/packages
+/TestResults
+
+/tools/NuGet.exe
+/App_Data
+/secrets
+/data
+.secrets
+appsettings.json
+local.settings.json
+
+node_modules
+dist
+
+# Local python packages
+.python_packages/
+
+# Python Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Azurite artifacts
+__blobstorage__
+__queuestorage__
+__tablestorage__/
+__azurite_db*__.json
+AzuriteConfig
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+*.auto.tfvars
+tfplan
+crash.log
+crash.*.log
+
+# Azure Functions local secrets
+local.settings.json
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+secrets/
+.secrets/
+*.pem
+*.key
+*.pfx
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.python_packages/
+.venv/
+venv/
+env/
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+.vs/
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Project backups
+*.backup.py
+*.backup.json
+*_backup.py
+*_broken_backup.py

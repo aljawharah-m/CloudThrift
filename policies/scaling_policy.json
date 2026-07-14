@@ -1,0 +1,46 @@
+{
+  "policy_name": "CloudThrift Intelligent Scaling Policy",
+  "enabled": true,
+
+  "instance_limits": {
+    "minimum": 1,
+    "normal_maximum": 4,
+    "emergency_maximum": 6
+  },
+
+  "scale_out": {
+    "cpu_threshold_percent": 70,
+    "network_threshold_mbps": 80,
+    "request_threshold_per_minute": 400,
+    "required_signals": 1,
+    "evaluation_period_minutes": 5,
+    "increase_by": 1
+  },
+
+  "scale_in": {
+    "cpu_threshold_percent": 25,
+    "network_threshold_mbps": 20,
+    "request_threshold_per_minute": 400,
+    "required_signals": 1,
+    "evaluation_period_minutes": 10,
+    "decrease_by": 1
+  },
+
+  "stability_controls": {
+    "scale_out_cooldown_minutes": 5,
+    "scale_in_cooldown_minutes": 15,
+    "maximum_actions_per_hour": 4
+  },
+
+  "cost_guardrails": {
+    "allow_emergency_scaling": true,
+    "block_normal_scaling_above_budget_percent": 80,
+    "emergency_scaling_budget_limit_percent": 95
+  },
+
+  "safety": {
+    "never_scale_below_minimum": true,
+    "protect_production": true,
+    "dry_run_mode": false
+  }
+}

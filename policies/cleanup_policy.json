@@ -1,0 +1,26 @@
+﻿{
+  "enabled": true,
+  "dry_run": true,
+  "allowed_environments": [
+    "development",
+    "test"
+  ],
+  "protected_resource_groups": [],
+  "required_cleanup_tag": "cloudthrift_cleanup",
+  "required_cleanup_tag_value": "true",
+  "protected_tag": "cloudthrift_protected",
+  "protected_tag_value": "true",
+  "minimum_resource_age_days": 1,
+  "require_known_resource_age": true,
+  "actions": {
+    "detect_unassociated_public_ips": true,
+    "detect_unused_network_interfaces": true,
+    "detect_unattached_disks": true,
+    "detect_unused_network_security_groups": true,
+    "detect_unused_route_tables": true,
+    "detect_empty_load_balancers": true,
+    "detect_empty_application_gateways": true,
+    "delete_orphaned_resources": true,
+    "deallocate_tagged_virtual_machines": false
+  }
+}

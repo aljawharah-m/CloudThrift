@@ -1,0 +1,6 @@
+azure-functions==1.24.0
+azure-identity
+azure-mgmt-compute
+azure-mgmt-monitor
+azure-monitor-query<2.0.0
+azure-data-tables

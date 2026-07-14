@@ -1,0 +1,108 @@
+#cloud-config
+
+package_update: true
+package_upgrade: false
+
+packages:
+  - nginx
+  - curl
+  - jq
+
+write_files:
+  - path: /var/www/html/index.html
+    owner: root:root
+    permissions: "0644"
+    content: |
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CloudThrift</title>
+        <style>
+          body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: #08111f;
+            color: #e6edf7;
+            font-family: Arial, sans-serif;
+          }
+
+          main {
+            width: min(720px, 88%);
+            padding: 48px;
+            border: 1px solid #26364d;
+            border-radius: 18px;
+            background: #101c2d;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+          }
+
+          h1 {
+            margin-top: 0;
+            font-size: 3rem;
+          }
+
+          p {
+            color: #aebed3;
+            line-height: 1.7;
+          }
+
+          .status {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: #173c2c;
+            color: #7ee2a8;
+          }
+        </style>
+      </head>
+      <body>
+        <main>
+          <h1>CloudThrift</h1>
+          <p>
+            Event-Driven Autonomous Infrastructure and FinOps Orchestrator
+            running on Azure Virtual Machine Scale Sets.
+          </p>
+          <span class="status">Infrastructure healthy</span>
+        </main>
+      </body>
+      </html>
+
+  - path: /var/www/html/health
+    owner: root:root
+    permissions: "0644"
+    content: |
+      healthy
+
+  - path: /etc/nginx/conf.d/cloudthrift.conf
+    owner: root:root
+    permissions: "0644"
+    content: |
+      server {
+          listen 80 default_server;
+          listen [::]:80 default_server;
+
+          root /var/www/html;
+          index index.html;
+
+          location / {
+              try_files $uri $uri/ =404;
+          }
+
+          location = /health {
+              access_log off;
+              default_type text/plain;
+              return 200 "healthy\n";
+          }
+      }
+
+runcmd:
+  - rm -f /etc/nginx/sites-enabled/default
+  - nginx -t
+  - systemctl enable nginx
+  - systemctl restart nginx
+
+final_message: "CloudThrift VM initialization completed successfully."
