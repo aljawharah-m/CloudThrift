@@ -5,8 +5,7 @@ Event-Driven Azure Infrastructure & FinOps Orchestrator
 **Al-Jawharah Mohammed Alsumayri**
 
 Cloud Infrastructure & Automation  
-Azure â€¢ Terraform â€¢ Python â€¢ FinOps â€¢ Event-Driven Architecture â€¢ SRE Concepts
-
+Azure • Terraform • Python • Infrastructure as Code • FinOps • SRE Concepts
 ---
 
 # Overview
