@@ -222,19 +222,19 @@ The Decision Engine analyzed the collected telemetry and selected a **Scale-Out*
 
 ### Decision Engine Selected Action
 
-![Decision Engine Selected Action](azure_function/screenshots/03-scale-out-decision.png)
+![Decision Engine Selected Action](screenshots/03-scale-out-decision.png)
 
 ### Decision Execution
 
 CloudThrift executed the Scale-Out action and successfully updated the Azure VM Scale Set capacity from **1** to **2 instances**.
 
-![Decision Engine Execution](azure_function/screenshots/04-scale-out-execution-result.png)
+![Decision Engine Execution](screenshots/04-scale-out-execution-result.png)
 
 ### Azure VM Scale Set After Scale-Out
 
 Azure confirmed that the VM Scale Set successfully scaled from **1** to **2 running instances**, verifying that the autonomous Scale-Out operation completed successfully.
 
-![Azure VM Scale Set After Scale-Out](azure_function/screenshots/01-vmss-scale-out-success.png)
+![Azure VM Scale Set After Scale-Out](screenshots/01-vmss-scale-out-success.png)
 
 ---
 
@@ -254,7 +254,7 @@ REQUESTS_LOW: 10/min
 
 The Decision Engine analyzed the collected telemetry and selected a **Scale-In** action, reducing the Azure VM Scale Set capacity from **2** to **1 instance**.
 
-![Decision Engine Selected Action](azure_function/screenshots/06-scale-in-decision.png)
+![Decision Engine Selected Action](screenshots/06-scale-in-decision.png)
 
 ```json
 {
@@ -269,13 +269,13 @@ The Decision Engine analyzed the collected telemetry and selected a **Scale-In**
 
 CloudThrift executed the Scale-In action and successfully updated the Azure VM Scale Set capacity from **2** to **1 instance**.
 
-![Decision Engine Execution](azure_function/screenshots/05-scale-in-execution-result.png)
+![Decision Engine Execution](screenshots/05-scale-in-execution-result.png)
 
 ### Azure VM Scale Set After Scale-In
 
 Azure confirmed that the Virtual Machine Scale Set successfully returned to its protected minimum capacity of **one running instance**, reducing infrastructure cost while maintaining application availability.
 
-![Azure VM Scale Set After Scale-In](azure_function/screenshots/03-vmss-normal-state.png)
+![Azure VM Scale Set After Scale-In](screenshots/03-vmss-normal-state.png)
 
 ---
 
@@ -300,7 +300,7 @@ During testing, CloudThrift reduced the environment from two instances to one in
 
 Before making any optimization decision, CloudThrift estimates the financial impact of scaling actions. The FinOps Optimizer compares the current infrastructure cost with the projected cost after optimization and calculates the expected savings.
 
-![FinOps Cost Estimation](azure_function/screenshots/14-finops-cost-estimation.png)
+![FinOps Cost Estimation](screenshots/14-finops-cost-estimation.png)
 
 Example cost estimate:
 
@@ -325,13 +325,13 @@ This demonstrated an estimated monthly reduction of approximately:
 
 Before performing cleanup actions, CloudThrift analyzes Azure resources to detect infrastructure waste. During testing, the platform successfully identified unused Azure resources that were eligible for automated cleanup.
 
-![Waste Detection](azure_function/screenshots/11-waste-detection.png)
+![Waste Detection](screenshots/11-waste-detection.png)
 
 ### Automated Cleanup Execution
 
 After confirming that the detected resource was safe to remove, CloudThrift automatically executed the cleanup operation. Azure confirmed that the unused managed disk was successfully deleted.
 
-![Automated Cleanup Execution](azure_function/screenshots/12-cleanup-executed.png)
+![Automated Cleanup Execution](screenshots/12-cleanup-executed.png)
 
 ### Minimum Capacity Protection
 
@@ -707,7 +707,7 @@ Syncing triggers
 
 CloudThrift was successfully deployed to Azure Functions. The deployment completed successfully, and Azure synchronized the function triggers, making the serverless automation ready for execution.
 
-![Azure Function Deployment](azure_function/screenshots/08-function-deployment-success.png)
+![Azure Function Deployment](screenshots/08-function-deployment-success.png)
 
 Azure confirmed the available functions:
 
@@ -793,7 +793,7 @@ The platform also writes structured logs for:
 
 CloudThrift continuously collects Azure Monitor metrics, including CPU utilization, to evaluate infrastructure health and determine whether autonomous scaling actions are required.
 
-![Azure Monitor Metrics](azure_function/screenshots/07-azure-monitor-metrics.png)
+![Azure Monitor Metrics](screenshots/07-azure-monitor-metrics.png)
 
 ### Azure Function Runtime Logs
 
@@ -806,7 +806,7 @@ CloudThrift continuously executes autonomous orchestration cycles. During each c
 
 The orchestration log below demonstrates a complete autonomous execution cycle, including telemetry collection, workload evaluation, cost analysis, infrastructure decision making, and structured audit logging.
 
-![Autonomous Orchestration](azure_function/screenshots/13-autonomous-orchestration.png)
+![Autonomous Orchestration](screenshots/13-autonomous-orchestration.png)
 
 ---
 
@@ -897,7 +897,7 @@ Using Terraform provides:
 
 CloudThrift provisions all Azure resources through Terraform into a single resource group, including the VM Scale Set, Load Balancer, Virtual Network, Function App, Storage Account, and monitoring components.
 
-![Azure Resource Group Overview](azure_function/screenshots/02-resource-group-overview.png)
+![Azure Resource Group Overview](screenshots/02-resource-group-overview.png)
 
 ---
 
@@ -1347,6 +1347,8 @@ https://github.com/aljawharah-m
 
 LinkedIn:  
 https://www.linkedin.com/in/aljawharah-alsumayri-219265375/
+
+
 
 
 
